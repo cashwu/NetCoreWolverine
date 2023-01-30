@@ -1,6 +1,13 @@
 public class CreateIssueHandler
 {
-    public IssueCreated Handle(CreateIssue command)
+    // private readonly DateTimerProvider _dateTimerProvider;
+    //
+    // public CreateIssueHandler(DateTimerProvider dateTimerProvider)
+    // {
+    //     _dateTimerProvider = dateTimerProvider;
+    // }
+    
+    public IssueCreated Handle(CreateIssue command, DateTimerProvider dateTimerProvider)
     {
         var issue = new Issue
         {
@@ -10,6 +17,8 @@ public class CreateIssueHandler
         };
         
         Store.Issues.Add(issue);
+        
+        Console.WriteLine($"now : {dateTimerProvider.Now():s}");
 
         return new IssueCreated(issue.Id);
     }

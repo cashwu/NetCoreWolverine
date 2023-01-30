@@ -6,6 +6,8 @@ builder.Services.AddControllers();
 
 builder.Host.UseWolverine();
 
+builder.Services.AddSingleton<DateTimerProvider>();
+
 var app = builder.Build();
 
 app.MapControllers();
