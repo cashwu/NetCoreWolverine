@@ -1,0 +1,1 @@
+public record IssueCreated(int Id);
