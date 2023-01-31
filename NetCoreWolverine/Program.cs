@@ -1,3 +1,4 @@
+using NetCoreWolverine.Issues;
 using Wolverine;
 
 var builder = WebApplication.CreateBuilder(args);

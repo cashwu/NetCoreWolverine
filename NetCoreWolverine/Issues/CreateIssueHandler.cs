@@ -1,3 +1,5 @@
+namespace NetCoreWolverine.Issues;
+
 public class CreateIssueHandler
 {
     // private readonly DateTimerProvider _dateTimerProvider;

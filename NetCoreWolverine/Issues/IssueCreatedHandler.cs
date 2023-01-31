@@ -1,3 +1,5 @@
+namespace NetCoreWolverine.Issues;
+
 public static class IssueCreatedHandler
 {
     public static Task Handle(IssueCreated created, DateTimerProvider dateTimerProvider)

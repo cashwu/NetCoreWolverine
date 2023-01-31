@@ -1,3 +1,5 @@
+namespace NetCoreWolverine.Issues;
+
 public class Issue
 {
     public int Id { get; set; }
