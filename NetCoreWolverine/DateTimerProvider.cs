@@ -1,3 +1,5 @@
+namespace NetCoreWolverine;
+
 public class DateTimerProvider
 {
     public DateTime Now()

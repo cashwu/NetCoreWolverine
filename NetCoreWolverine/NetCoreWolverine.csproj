@@ -4,6 +4,7 @@
     <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <UserSecretsId>545fdd26-0cc8-440b-921a-a809df456fac</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="..\.dockerignore">
@@ -11,6 +12,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.1" />
     <PackageReference Include="WolverineFx" Version="0.9.7" />
+    <PackageReference Include="WolverineFx.EntityFrameworkCore" Version="0.9.7" />
+    <PackageReference Include="WolverineFx.Postgresql" Version="0.9.7" />
   </ItemGroup>
 </Project>
