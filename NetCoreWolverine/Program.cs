@@ -49,4 +49,11 @@ app.MapGet("/items/create", (IMessageBus bus) =>
     bus.InvokeAsync(body);
 });
 
+app.MapGet("/items/create2", (IMessageBus bus) =>
+{
+    var body = new CreateItemCommand($"{Guid.NewGuid()}_{DateTime.UtcNow:s}");
+
+    return bus.InvokeAsync<ItemCreated>(body);
+});
+
 app.Run();
