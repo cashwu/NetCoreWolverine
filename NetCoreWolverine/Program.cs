@@ -1,11 +1,14 @@
+using Messages;
 using Microsoft.EntityFrameworkCore;
 using NetCoreWolverine;
 using NetCoreWolverine.Issues;
 using NetCoreWolverine.Items;
+using NetCoreWolverine.PingPong;
 using Oakton.Resources;
 using Wolverine;
 using Wolverine.EntityFrameworkCore;
 using Wolverine.Postgresql;
+using Wolverine.Transports.Tcp;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +20,12 @@ builder.Host.UseWolverine(options =>
 {
     options.PersistMessagesWithPostgresql(connectionString);
     options.UseEntityFrameworkCoreTransactions();
+
+    options.ListenAtPort(5580);
+
+    options.PublishMessage<Ping>().ToPort(5581);
+    
+    options.Services.AddHostedService<Worker>();
 });
 
 builder.Services.AddSingleton<DateTimerProvider>();
