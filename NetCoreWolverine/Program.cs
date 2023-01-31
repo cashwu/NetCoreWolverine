@@ -44,10 +44,7 @@ app.MapGet("/issues/create", (IMessageBus bus) =>
 
 app.MapGet("/items/create", (IMessageBus bus) =>
 {
-    var body = new CreateItemCommand
-    {
-        Name = $"{Guid.NewGuid()}_{DateTime.UtcNow:s}"
-    };
+    var body = new CreateItemCommand($"{Guid.NewGuid()}_{DateTime.UtcNow:s}");
 
     bus.InvokeAsync(body);
 });
