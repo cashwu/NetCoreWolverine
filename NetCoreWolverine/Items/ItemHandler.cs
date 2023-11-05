@@ -1,3 +1,4 @@
+using NetCoreWolverine.Entity;
 using Wolverine.Attributes;
 
 namespace NetCoreWolverine.Items;

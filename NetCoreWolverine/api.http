@@ -1,0 +1,7 @@
+
+POST http://localhost:5215/item
+Content-Type: application/json
+
+{
+  "Name": "nn123"
+}
