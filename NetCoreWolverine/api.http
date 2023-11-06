@@ -1,7 +1,14 @@
+@host=http://localhost:5215
 
-POST http://localhost:5215/item
+GET {{host}}
+
+
+###
+
+POST {{host}}/item
 Content-Type: application/json
 
 {
-  "Name": "nn123"
+  "Id" : "{{$random.uuid}}",
+  "Name": "{{$isoTimestamp}}"
 }

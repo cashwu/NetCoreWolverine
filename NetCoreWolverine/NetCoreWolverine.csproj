@@ -13,11 +13,16 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0-rc.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     <PackageReference Include="WolverineFx" Version="1.10.1" />
     <PackageReference Include="WolverineFx.EntityFrameworkCore" Version="1.10.1" />
+    <PackageReference Include="WolverineFx.Http" Version="1.10.1" />
     <PackageReference Include="WolverineFx.Postgresql" Version="1.10.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Messages\Messages.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="WolverineTests" />
   </ItemGroup>
 </Project>

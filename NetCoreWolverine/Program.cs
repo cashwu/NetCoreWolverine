@@ -1,13 +1,16 @@
 using Microsoft.EntityFrameworkCore;
 using NetCoreWolverine.Entity;
-using NetCoreWolverine.Items;
+using Oakton;
+using Oakton.Resources;
 using Wolverine;
 using Wolverine.EntityFrameworkCore;
+using Wolverine.Http;
 using Wolverine.Postgresql;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
+builder.Services.AddResourceSetupOnStartup();
 
 builder.Host.UseWolverine((context, options) =>
 {
@@ -26,13 +29,35 @@ builder.Host.UseWolverine((context, options) =>
     options.Policies.UseDurableOutboxOnAllSendingEndpoints();
 });
 
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 var app = builder.Build();
 
-app.MapControllers();
+// app.MapControllers();
 
-app.MapGet("/", () => "ok");
+// app.MapGet("/", () => "ok");
 
-app.MapPost("/item", ([AsParameters] CreateItemRequest request) =>
-            request.Bus.InvokeAsync(request.Command, request.CancellationToken));
+// app.MapPost("/item", ([AsParameters] CreateItemRequest request) =>
+//             request.Bus.InvokeAsync<ItemCreated>(request.Command, request.CancellationToken));
 
-app.Run();
+// app.MapPostToWolverine<CreateItemCommand, ItemCreated>("/item");
+
+app.UseSwagger();
+app.UseSwaggerUI();
+app.MapWolverineEndpoints();
+
+// app.Run();
+
+return await app.RunOaktonCommands(args);
+
+// ReSharper disable once UnusedType.Global
+public class Endpoint
+{
+    [WolverineGet("/")]
+    public string Get() => "OK ~";
+    
+    
+}
+
+// public partial class Program;

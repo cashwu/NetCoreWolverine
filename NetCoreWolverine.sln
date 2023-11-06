@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sln", "sln", "{47CC1B67-867
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WolverineTests", "WolverineTests\WolverineTests.csproj", "{8519625C-54CC-4F13-A154-AAF12DF23022}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,5 +31,9 @@ Global
 		{F93A01DF-A388-4945-B51F-00B0B4547108}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F93A01DF-A388-4945-B51F-00B0B4547108}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F93A01DF-A388-4945-B51F-00B0B4547108}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8519625C-54CC-4F13-A154-AAF12DF23022}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8519625C-54CC-4F13-A154-AAF12DF23022}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8519625C-54CC-4F13-A154-AAF12DF23022}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8519625C-54CC-4F13-A154-AAF12DF23022}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
